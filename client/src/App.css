@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+#mapid {
+  height: 100%;
+  width: 100%;
+  min-height: 500px;
+  min-width: 500px;
+  position: absolute;
+  z-index: 1;
+}
+
+.page-container {
+  z-index: 2;
+  position: relative;
+  float: right;
+  max-width: 500px;
+  background-color: grey;
+  opacity: 0.5;
+}
+
+html, body, #root, .page-container {
+  height: 100%;
+}
