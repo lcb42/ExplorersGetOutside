@@ -37,62 +37,14 @@
   }
 }
 
-html, body, #root, .page-container, .sidebar {
+html, body, #root, .page-container, .contents {
   height: 100%;
 }
 
-.title-container {
-  width: 100%;
-  padding-left: auto;
-  padding-right: auto;
-}
-
-@media screen and (max-width: 500px) {
-  #mapid {
-    height: 100%;
-    width: 100%;
-    min-height: 200px;
-    min-width: 200px;
-    z-index: 1;
-  }
-
-  .sidebar {
-    width: 100%;
-  
-    z-index: 2;
-    min-width: 300px;
-    background-color: rgb(128, 128, 128, 0.5);
-  
-    text-align: center;
-
-  }
-}
-
-@media screen and (min-width: 500px) {
-  #mapid {
-    height: 100%;
-    width: 100%;
-    min-height: 200px;
-    min-width: 200px;
-    position: absolute;
-    z-index: 1;
-  }
-
-  .sidebar {
-    width: 30%;
-  
-    z-index: 2;
-    position: relative;
-    float: right;
-    min-width: 300px;
-    background-color: rgb(128, 128, 128, 0.5);
-  
-    text-align: center;
-  }
-}
 
 .paper-tile {
   margin: 20px;
   padding: 20px;
 }
+
 

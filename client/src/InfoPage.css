@@ -1,0 +1,35 @@
+.title-container {
+    width: 100%;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+#mapid {
+    height: 100%;
+    width: 100%;
+    min-height: 200px;
+    min-width: 200px;
+    position: absolute;
+    z-index: 1;
+}
+
+.infopage-contents {
+    width: 100%;
+
+    z-index: 2;
+    position: relative;
+    float: right;
+    min-width: 300px;
+    background-color: rgba(255, 255, 255, 0.5);
+
+    text-align: center;
+}
+  
+.infopage-paper-tile {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    max-width: 1000px;
+}
+  
+  
