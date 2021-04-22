@@ -5,6 +5,7 @@ import './App.css';
 
 import Home from './Home.js';
 import InfoPage from './InfoPage.js';
+import SubmitPage from './SubmitPage.js';
 
 export default function App() {
   return (
@@ -12,6 +13,9 @@ export default function App() {
       <Switch>
         <Route path="/info">
           <InfoPage />
+        </Route>
+        <Route path="/submit">
+          <SubmitPage />
         </Route>
         <Route path="/">
           <Home />
