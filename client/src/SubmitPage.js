@@ -1,5 +1,6 @@
 import React from 'react';
 
+import axios from 'axios';
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 
@@ -31,6 +32,7 @@ export default function SubmitPage() {
     const [selectedDate, setSelectedDate] = React.useState(new Date('2021-04-23T12:00:00'));
     const [activityType, setActivityType] = React.useState('');
     const [distance, setDistance] = React.useState(0);
+    const [userCode, setUserCode] = React.useState("");
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -44,10 +46,24 @@ export default function SubmitPage() {
         setDistance(event.target.value);
     }
 
+    const handleUserCodeChange = (event) => {
+        setUserCode(event.target.value);
+    }
+
     const sendData = () => {
         console.log("Print a nice message")
         // Call server api route to submit an entry
         // This will use a cookie to identify the participant
+        axios.post('/submit', {
+            user_code: userCode, // get cookie value and pass it here
+            distance: distance,
+            activity: activityType,
+            date_completed: selectedDate
+        }).then(resp => {
+            console.log(resp)
+        }).catch(err => {
+            console.error(err)
+        })
     }
 
     return (
@@ -109,6 +125,20 @@ export default function SubmitPage() {
                             'aria-label': 'change date',
                         }}
                     />
+                <br/><br/>
+                <p>What's your user code?</p>
+                <FormControl className={ classes.formControl }>
+                    <Input
+                        id="standard-adornment-weight"
+                        value={userCode}
+                        onChange={handleUserCodeChange}
+                        aria-describedby="standard-weight-helper-text"
+                        inputProps={{
+                        'aria-label': 'Your user code',
+                        }}
+                    />
+                    <FormHelperText id="standard-weight-helper-text">Your user code</FormHelperText>
+                </FormControl>
                 <br/><br/><br/><br/>
                 <Button 
                     variant="outlined"
