@@ -9,10 +9,9 @@ import { Container, Paper, FormControl, InputLabel, Select, MenuItem, FormHelper
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 import SendIcon from '@material-ui/icons/Send';
 
-import { MapContainer, TileLayer } from 'react-leaflet'
-
 import './App.css';
 import './SubmitPage.css';
+import Map from './Components/Map.js'
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -25,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 export default function SubmitPage() {
-    const position = [55, 1]
 
     const classes = useStyles();
 
@@ -68,12 +66,7 @@ export default function SubmitPage() {
 
     return (
         <>
-        <MapContainer center={position} zoom={6} scrollWheelZoom={false} id="mapid">
-            <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-            />
-        </MapContainer>
+        <Map/>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <div className="submitpage-contents contents">
             <Container className="submitpage-title-container">

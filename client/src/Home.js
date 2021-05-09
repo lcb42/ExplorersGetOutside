@@ -2,24 +2,17 @@ import React from 'react';
 
 import { Container, Grid, Paper } from '@material-ui/core';
 
-import { MapContainer, TileLayer } from 'react-leaflet'
-
 import './App.css';
 import './Home.css';
 
 import CustomMenu from './Components/CustomMenu.js'
+import Map from './Components/Map.js'
 
 export default function Home() {
-    const position = [55, 1]
 
     return (
         <>
-        <MapContainer center={position} zoom={6} scrollWheelZoom={false} id="mapid">
-            <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-            />
-        </MapContainer>
+        <Map/>
         <div className="home-contents contents">
                 <Container className="home-title-container">
                     <Grid container spacing={3}>
